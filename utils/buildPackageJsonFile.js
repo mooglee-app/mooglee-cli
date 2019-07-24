@@ -7,7 +7,7 @@ module.exports = function (appName, dirPath) {
   const json           = JSON.stringify({
     'name': appName,
     'version': '1.0.0',
-    'description': 'A webapp built with React and NextJs',
+    'description': 'A web application built with React and NextJs',
     'scripts': {
       'test': 'echo "Error: no test specified" && exit 1',
       'postinstall': 'link-module-alias',
