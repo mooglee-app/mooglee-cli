@@ -9,6 +9,10 @@ module.exports = function ({ appName, appPath, spinner }, next) {
     'version': '1.0.0',
     'description': 'A web application built with React and NextJs',
     'scripts': {
+      "dev": "NODE_ENV=development node index.js",
+      "build": "NODE_ENV=production next build",
+      "start": "NODE_ENV=production node index.js",
+      "heroku-postbuild": "npm run build",
       'test': 'echo "Error: no test specified" && exit 1',
       'postinstall': 'link-module-alias',
     },
