@@ -1,6 +1,6 @@
 {
-  "name": "mooglee",
-  "version": "1.0.0",
+  "name": "@mooglee/mooglee-cli",
+  "version": "0.0.0",
   "description": "",
   "main": "bin/index.js",
   "scripts": {

@@ -6,7 +6,6 @@ const url = require('url');
  */
 
 module.exports = {
-  clientDir: './client',
   get port() { return parseInt(process.env.PORT);},
   get host() {return process.env.HOST; },
   get protocol() {return process.env.PROTOCOL;},

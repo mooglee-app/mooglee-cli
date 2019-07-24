@@ -1,9 +1,9 @@
 import CssBaseline                             from '@material-ui/core/CssBaseline';
 import Hidden                                  from '@material-ui/core/Hidden';
 import { ThemeProvider }                       from '@material-ui/styles';
-import config                                  from 'mooglee/config';
-import { appWithTranslation, i18n }            from 'mooglee/lib/i18n';
-import envBoolean                              from 'mooglee/tools/envBoolean';
+import config                                  from '@mooglee/core/config';
+import { appWithTranslation, i18n }            from '@mooglee/core/lib/i18n';
+import envBoolean                              from '@mooglee/core/tools/envBoolean';
 import withRedux                               from 'next-redux-wrapper';
 import App, { Container }                      from 'next/app';
 import NProgress                               from 'nprogress';
@@ -11,7 +11,7 @@ import React                                   from 'react';
 import { Provider }                            from 'react-redux';
 import MUITheme                                from '../theme';
 import { fetchAppSettings, updateAppLanguage } from '../store/actions/app.actions';
-import createStore                             from 'mooglee/store/createStore';
+import createStore                             from '@mooglee/core/store/createStore';
 import '../styles/styles.scss';
 
 

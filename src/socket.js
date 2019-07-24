@@ -1,4 +1,4 @@
-import MoogleeSocket from 'moogle/lib/socket';
+import MoogleeSocket from '@mooglee/core/lib/socket';
 
 
 export default class Socket extends MoogleeSocket {

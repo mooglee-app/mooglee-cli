@@ -1,11 +1,13 @@
 const withSass      = require('@zeit/next-sass');
-const webpackConfig = require('mooglee/config/webpack.config');
+const webpackConfig = require('@mooglee/core/config/webpack.config');
 const withOffline   = require('next-offline');
-const workboxOpts   = require('moogle/config').serviceWorker;
+const workboxOpts   = require('@mooglee/core/config').serviceWorker;
+const paths = require('@mooglee/core/lib/paths');
 
 module.exports      = withOffline(withSass({
   cssModules: true,
   distDir: './build', // from client folder
+  dist: './build', // from client folder
   workboxOpts,
   dontAutoRegisterSw: true,
   generateInDevMode: true,

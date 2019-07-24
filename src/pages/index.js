@@ -1,9 +1,9 @@
 import Grid        from '@material-ui/core/Grid';
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
-import Layout      from 'mooglee/components/PageLayout';
-import LazyImage   from 'mooglee/components/LazyImage';
-import pageWrapper from 'mooglee/helpers/pageWrapper';
+import Layout      from '@mooglee/core/components/PageLayout';
+import LazyImage   from '@mooglee/core/components/LazyImage';
+import pageWrapper from '@mooglee/core/helpers/pageWrapper';
 
 
 const styles = theme => ({

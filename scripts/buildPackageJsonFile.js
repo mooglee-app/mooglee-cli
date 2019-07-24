@@ -14,16 +14,13 @@ module.exports = function ({ appName, appPath, spinner }, next) {
       'start': 'NODE_ENV=production node index.js',
       'heroku-postbuild': 'npm run build',
       'test': 'echo "Error: no test specified" && exit 1',
-      'postinstall': 'link-module-alias',
-    },
-    '_moduleAliases': {
-      'mooglee': '../../mooglee-scripts',
     },
     'dependencies': {
       '@babel/core': '^7.5.4',
       '@material-ui/core': '^4.2.1',
       '@material-ui/icons': '^4.2.1',
       '@material-ui/styles': '^4.2.1',
+      '@mooglee/core': '../../mooglee-scripts',
       '@zeit/next-sass': '^1.0.1',
       'autoprefixer': '^9.6.1',
       'axios': '^0.19.0',
@@ -80,9 +77,6 @@ module.exports = function ({ appName, appPath, spinner }, next) {
       'url-join': '^4.0.1',
       'url-loader': '^2.0.1',
       'webpack-visualizer-plugin': '^0.1.11',
-    },
-    'devDependencies': {
-      'link-module-alias': '^1.2.0',
     },
     'author': '',
     'license': 'ISC',

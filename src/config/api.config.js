@@ -1,6 +1,6 @@
 const url        = require('url');
 const urlJoin    = require('url-join');
-const envBoolean = require('mooglee/tools/envBoolean');
+const envBoolean = require('@mooglee/core/tools/envBoolean');
 
 
 /**

@@ -59,13 +59,13 @@ const ora     = require('ora');
       action: require('../scripts/buildPackageJsonFile'),
     },
     {
-      desc: 'Install node modules',
-      action: require('../scripts/installModules'),
-    },
-    {
 
       desc: 'Copy source files',
       action: require('../scripts/copySourcesFiles'),
+    },
+    {
+      desc: 'Install node modules',
+      action: require('../scripts/installModules'),
     },
   ];
 
@@ -80,7 +80,8 @@ const ora     = require('ora');
 
     // Throw any error
     if (res.error) {
-      config.spinner.error(chalk.red(res.error));
+      config.spinner.fail(chalk.red(res.error));
+      return;
     }
 
     // Log a success message after every action call

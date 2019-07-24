@@ -17,30 +17,5 @@
  */
 
 module.exports = {
-
-  /** _DEV_ **/
-
-  '/_sandbox': { page: '/_sandbox', prefetch: true },
-
-  '/_doc/intro': { page: '/_doc/intro' },
-  '/_doc/requirements': { page: '/_doc/requirements' },
-  '/_doc/get-started': { page: '/_doc/get-started' },
-  '/_doc/discover': { page: '/_doc/discover' },
-  '/_doc/under-the-hood': { page: '/_doc/under-the-hood' },
-  '/_doc/configuration': { page: '/_doc/configuration' },
-  '/_doc/router': { page: '/_doc/router' },
-  '/_doc/api': { page: '/_doc/api' },
-  '/_doc/i18n': { page: '/_doc/i18n' },
-  '/_doc/wrappers': { page: '/_doc/wrappers' },
-  '/_doc/store': { page: '/_doc/store' },
-  '/_doc/theme': { page: '/_doc/theme' },
-  '/_doc/components': { page: '/_doc/components' },
-  '/_doc/performances': { page: '/_doc/performances' },
-  '/_doc/troubleshooting': { page: '/_doc/troubleshooting' },
-
-
-  /** GENERAL **/
-
   '/': { page: '/index', prefetch: true, neverCache: true },
-  '/readme': { page: '/readme', prefetch: true },
 };

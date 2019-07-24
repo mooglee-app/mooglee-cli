@@ -1,4 +1,4 @@
-const paths = require('mooglee/lib/paths');
+const paths = require('@mooglee/core/lib/paths');
 
 /**
  * Service Worker Configuration
