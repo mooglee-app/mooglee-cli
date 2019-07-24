@@ -1,4 +1,4 @@
-const server = require('mooglee/scripts');
+const server = require('mooglee/server');
 
 server.start()
   .catch(err => {

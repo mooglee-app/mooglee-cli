@@ -1,9 +1,9 @@
 import { ServerStyleSheets }                from '@material-ui/styles';
 import Document, { Head, Main, NextScript } from 'next/document';
 import React                                from 'react';
-import config                               from '../../config';
-import { i18n }                             from '../../server/lib/i18n';
-import MUITheme                             from '../MUITheme';
+import config                               from 'mooglee/config';
+import { i18n }                             from 'mooglee/lib/i18n';
+import MUITheme                             from '../theme';
 
 
 

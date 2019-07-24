@@ -1,7 +1,7 @@
 const withSass      = require('@zeit/next-sass');
-const webpackConfig = require('./config/webpack.config');
+const webpackConfig = require('mooglee/config/webpack.config');
 const withOffline   = require('next-offline');
-const workboxOpts   = require('./config/serviceWorker.config');
+const workboxOpts   = require('moogle/config').serviceWorker;
 
 module.exports      = withOffline(withSass({
   cssModules: true,
