@@ -108,5 +108,6 @@ const ora     = require('ora');
     }
   };
 
+  // Let's started by executing the first action in the stack
   next();
 })();
