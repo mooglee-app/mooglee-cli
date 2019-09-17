@@ -13,6 +13,7 @@ import MUITheme                                from '../theme';
 import { fetchAppSettings, updateAppLanguage } from '../store/actions/app.actions';
 import createStore                             from '@mooglee/core/store/createStore';
 import '../styles/styles.scss';
+import reduxLocalStorage                       from 'redux-localstorage-simple';
 
 
 
@@ -158,4 +159,5 @@ export default withRedux(createStore)(
   config.lang.enabled
     ? appWithTranslation(_App)
     : _App,
+  reduxLocalStorage
 );

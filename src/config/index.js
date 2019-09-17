@@ -16,7 +16,6 @@ const masteredConfig = Object.assign({
     seo: require('./seo.config'),
     env: require('./env.config'),
     redux: require('./redux.config'),
-    serviceWorker: require('./serviceWorker.config'),
   },
   envConfig,
 );
