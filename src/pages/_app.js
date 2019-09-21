@@ -3,16 +3,16 @@ import Hidden                                  from '@material-ui/core/Hidden';
 import { ThemeProvider }                       from '@material-ui/styles';
 import config                                  from '@mooglee/core/config';
 import { appWithTranslation, i18n }            from '@mooglee/core/lib/i18n';
+import createStore                             from '@mooglee/core/store/createStore';
 import envBoolean                              from '@mooglee/core/tools/envBoolean';
 import withRedux                               from 'next-redux-wrapper';
-import App, { Container }                      from 'next/app';
+import App                                     from 'next/app';
 import NProgress                               from 'nprogress';
 import React                                   from 'react';
 import { Provider }                            from 'react-redux';
-import MUITheme                                from '../theme';
 import { fetchAppSettings, updateAppLanguage } from '../store/actions/app.actions';
-import createStore                             from '@mooglee/core/store/createStore';
 import '../styles/styles.scss';
+import MUITheme                                from '../theme';
 
 
 
@@ -117,39 +117,37 @@ class _App extends App {
     const { Component, pageProps, store } = this.props;
 
     return (
-      <Container>
-        <Provider store={store}>
-          <ThemeProvider theme={MUITheme}>
-            <CssBaseline/>
-            <div className="app">
-              <Component {...pageProps}/>
+      <Provider store={store}>
+        <ThemeProvider theme={MUITheme}>
+          <CssBaseline/>
+          <div className="app">
+            <Component {...pageProps}/>
 
 
-              { // This is a dev component that displays the current screen size label at the bottom right corner
-                // of the screen
-                process.env.NODE_ENV === 'development' &&
-                <div style={{
-                  position: 'fixed',
-                  bottom: 0,
-                  right: 0,
-                  background: 'green',
-                  color: 'white',
-                  padding: 5,
-                  fontSize: 16,
-                  zIndex: 4000,
-                }}>
-                  <Hidden smUp>xs</Hidden>
-                  <Hidden xsDown mdUp>sm</Hidden>
-                  <Hidden lgUp smDown>md</Hidden>
-                  <Hidden xlUp mdDown>lg</Hidden>
-                  <Hidden lgDown>xl</Hidden>
-                </div>
-              }
+            { // This is a dev component that displays the current screen size label at the bottom right corner
+              // of the screen
+              process.env.NODE_ENV === 'development' &&
+              <div style={{
+                position: 'fixed',
+                bottom: 0,
+                right: 0,
+                background: 'green',
+                color: 'white',
+                padding: 5,
+                fontSize: 16,
+                zIndex: 4000,
+              }}>
+                <Hidden smUp>xs</Hidden>
+                <Hidden xsDown mdUp>sm</Hidden>
+                <Hidden lgUp smDown>md</Hidden>
+                <Hidden xlUp mdDown>lg</Hidden>
+                <Hidden lgDown>xl</Hidden>
+              </div>
+            }
 
-            </div>
-          </ThemeProvider>
-        </Provider>
-      </Container>
+          </div>
+        </ThemeProvider>
+      </Provider>
     );
   }
 };

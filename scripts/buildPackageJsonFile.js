@@ -20,7 +20,7 @@ module.exports = function ({ appName, appPath, spinner }, next) {
       '@material-ui/core': '^4.2.1',
       '@material-ui/icons': '^4.2.1',
       '@material-ui/styles': '^4.2.1',
-      '@mooglee/core': '^0.0.0',
+      '@mooglee/core': 'latest',
       '@zeit/next-sass': '^1.0.1',
       'autoprefixer': '^9.6.1',
       'axios': '^0.19.0',
