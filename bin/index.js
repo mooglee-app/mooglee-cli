@@ -86,6 +86,10 @@ const APP_NAME = (process.argv[2] && process.argv[2].indexOf('--') !== 0) ? proc
       action: require('../scripts/copySourcesFiles'),
     },
     {
+      desc: 'Configure your application',
+      action: require('../scripts/replaceFilesTemplateVars'),
+    },
+    {
       desc: 'Install node modules',
       action: require('../scripts/installModules'),
     },

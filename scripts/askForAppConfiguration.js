@@ -90,7 +90,6 @@ module.exports = function ({ argv, spinner, config, appName }, next, data) {
         res[_question.name] = _question.initial;
       }
     });
-    console.log(res);
     data.appConfig = res;
     next();
   });

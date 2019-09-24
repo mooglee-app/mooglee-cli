@@ -6,7 +6,7 @@ module.exports = {
 
   // Enable all the translation services.
   // If you disable it, it means no routes translation, no locales files, and so on...
-  enabled: false,
+  enabled: <<<ENABLE_TRANSLATION>>>,
 
   // The default language also used as a fallback
   default: 'en',
