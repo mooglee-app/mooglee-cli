@@ -21,6 +21,11 @@ class _App extends App {
     const props = {};
 
     props.lang = !ctx.req ? i18n.language : ctx.req.language;
+
+    if (!props.lang) {
+      props.lang = config.lang.default;
+    }
+
     ctx.store.dispatch(updateAppLanguage(props.lang));
     props.pageProps = {
       ...(Component.getInitialProps ? await Component.getInitialProps({ ...ctx, lang: props.lang }) : {}),
