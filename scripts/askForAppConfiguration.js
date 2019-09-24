@@ -73,11 +73,20 @@ const questions = [
   },
 ];
 
-module.exports = function ({ spinner, config, appName }, next, data) {
+module.exports = function ({ argv, spinner, config, appName }, next, data) {
+  if (argv.includes('--yes')) {
+    data.appConfig = {};
+    questions.forEach(function (_question) {
+      data.appConfig[_question.name] = _question.initial;
+    });
+    return next();
+  }
+
   spinner.stop();
+
   prompts(questions, { onCancel: function () {process.exit(0);} }).then(function (res) {
     questions.forEach(function (_question) {
-      if (res[_question.name] === undefined || res[_question.name] === null  || res[_question.name] === '') {
+      if (res[_question.name] === undefined || res[_question.name] === null || res[_question.name] === '') {
         res[_question.name] = _question.initial;
       }
     });

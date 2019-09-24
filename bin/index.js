@@ -6,8 +6,21 @@ const packageJson = require('../package');
 const path        = require('path');
 const ora         = require('ora');
 
+const APP_NAME = (process.argv[2] && process.argv[2].indexOf('--') !== 0) ? process.argv[2] : 'mooglee-app';
 
 (function () {
+
+
+  if (process.argv.includes('--help')) {
+    console.log(`
+    Usage:
+    
+    Run '$ mooglee <app_directory>' and answer some questions to generate your app.
+    
+    You can avoid the questions using the "--yes" flag
+    `);
+    process.exit(0);
+  }
 
   console.log(
     chalk.yellow(
@@ -23,12 +36,11 @@ const ora         = require('ora');
   console.log();
   console.log();
 
-
   /**
    * This is the config object passed to each action
    */
   const config = {
-    appPath: path.resolve(process.argv[2] || 'mooglee-app'),
+    appPath: path.resolve(APP_NAME),
     get appName() {return this.appPath.split('/').pop();},
     argv: process.argv.slice(1),
     spinner: ora('START').start(),

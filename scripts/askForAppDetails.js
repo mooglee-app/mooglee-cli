@@ -1,14 +1,9 @@
 const prompts = require('prompts');
 const chalk   = require('chalk');
 
-module.exports = function ({ spinner, config, appName }, next, data) {
-  spinner.stop();
+module.exports = function ({ argv, spinner, config, appName }, next, data) {
 
-  console.log(
-    chalk.grey('\nInfo : you can always change these settings later\n'),
-  );
-
-  prompts([
+  const questions = [
     {
       type: 'text',
       name: 'name',
@@ -25,8 +20,25 @@ module.exports = function ({ spinner, config, appName }, next, data) {
       type: 'text',
       name: 'description',
       message: 'Give a description to your project',
+      initial: '',
     },
-  ], { onCancel: function () {process.exit(0);} }).then(function (res) {
+  ];
+
+  if (argv.includes('--yes')) {
+    data.appDetails = {};
+    questions.forEach(function (_question) {
+      data.appDetails[_question.name] = _question.initial;
+    });
+    return next();
+  }
+
+  spinner.stop();
+
+  console.log(
+    chalk.grey('\nInfo : you can always change these settings later\n'),
+  );
+
+  prompts(questions, { onCancel: function () {process.exit(0);} }).then(function (res) {
     data.appDetails = res;
     next();
   });
