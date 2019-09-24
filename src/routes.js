@@ -18,4 +18,5 @@
 
 module.exports = {
   '/': { page: '/index', prefetch: true, neverCache: true },
+  '/_sandbox': { page: '/_sandbox', prefetch: true, neverCache: true },
 };
