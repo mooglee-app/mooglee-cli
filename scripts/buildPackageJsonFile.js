@@ -2,12 +2,12 @@ const fs   = require('fs');
 const path = require('path');
 
 
-module.exports = function ({ appName, appPath, spinner }, next) {
+module.exports = function ({ appPath, spinner }, next, data) {
   const outputFilename = path.resolve(path.join(appPath, 'package.json'));
   const json           = JSON.stringify({
-    'name': appName,
-    'version': '0.0.0',
-    'description': 'A web application built with React and Next.js',
+    'name': data.appDetails.name.replace(/ /, '-'),
+    'version': data.appDetails.version,
+    'description': data.appDetails.description || 'A web application built with React and Next.js',
     'scripts': {
       'dev': 'NODE_ENV=development node index.js',
       'build': 'NODE_ENV=production next build',
@@ -75,7 +75,7 @@ module.exports = function ({ appName, appPath, spinner }, next) {
       'url-loader': '^2.0.1',
     },
     'author': '',
-    'license': 'ISC',
+    'license': 'MIT',
 
   }, null, 4);
 

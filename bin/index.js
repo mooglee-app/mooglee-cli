@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const chalk   = require('chalk');
-const figlet  = require('figlet');
-const package = require('../package');
-const path    = require('path');
-const ora     = require('ora');
+const chalk       = require('chalk');
+const figlet      = require('figlet');
+const packageJson = require('../package');
+const path        = require('path');
+const ora         = require('ora');
 
 
 (function () {
@@ -14,7 +14,7 @@ const ora     = require('ora');
       figlet.textSync('Mooglee', {
         font: 'Standard',
       }),
-      ` v${package.version}`,
+      ` v${packageJson.version}`,
     ),
   );
   console.log(
@@ -45,11 +45,21 @@ const ora     = require('ora');
    *   next {func} : A callback that should be triggered when the action has finished its job
    *   data {object} : A global object passed to each action
    *
-   * An object can be passed to the next callback with the following attributes :
+   * => An action can return a Promise. In that case it should not call the next callback
+   *
+   * Inside the actions, an object can be passed to the next callback with the following attributes :
    *   error {*} : An error to be thrown
    * @type {*[]}
    */
   const actions = [
+    {
+      desc: 'Set app details',
+      action: require('../scripts/askForAppDetails'),
+    },
+    {
+      desc: 'Set app configuration',
+      action: require('../scripts/askForAppConfiguration'),
+    },
     {
       desc: 'Create the app directory',
       action: require('../scripts/mkdirSync'),
@@ -71,6 +81,7 @@ const ora     = require('ora');
 
   let _counter = 0;
   let next     = function () {};
+  const data = {};
 
   /**
    * The next callback function used to execute the actions
@@ -95,10 +106,21 @@ const ora     = require('ora');
 
       // Log the action description
       config.spinner = config.spinner.start(chalk.blue(_action.desc));
+
       _counter++;
 
       // Execute the action
-      _action.action(config, next, res);
+      const _ret = _action.action(config, next, data);
+
+      // Handle asynchronous actions call
+      if (_ret && typeof _ret.then === 'function') {
+        _ret.then(function () {
+          next();
+        })
+          .catch(function (error) {
+            next({ error });
+          });
+      }
 
     } else {
       console.log();

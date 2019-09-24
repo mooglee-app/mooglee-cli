@@ -47,7 +47,7 @@ module.exports = {
   debug: false,
 
   // Lang namespaces
-  namespaces: ['common', 'home'],
+  namespaces: ['common'],
 
   // Default language namespace used on the whole app
   defaultNamespace: 'common',
