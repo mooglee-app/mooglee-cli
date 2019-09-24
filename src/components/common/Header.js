@@ -3,7 +3,7 @@ import Grid             from '@material-ui/core/Grid';
 import Toolbar          from '@material-ui/core/Toolbar';
 import clx              from 'classnames';
 import React            from 'react';
-import componentWrapper from '@mooglee/core/helpers/componentWrapper';
+import componentWrapper from '@mooglee/core/wrappers/componentWrapper';
 import envBoolean       from '@mooglee/core/tools/envBoolean';
 import Link             from '@mooglee/core/components/Link';
 

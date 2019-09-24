@@ -1,6 +1,6 @@
 import { Container }     from '@material-ui/core';
 import MoogleePageLayout from '@mooglee/core/components/PageLayout';
-import wrapper           from '@mooglee/core/helpers/componentWrapper';
+import wrapper           from '@mooglee/core/wrappers/componentWrapper';
 import React             from 'react';
 import Header            from './Header';
 

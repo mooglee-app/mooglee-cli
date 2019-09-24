@@ -3,7 +3,7 @@ import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
 import Layout      from '../components/common/PageLayout';
 import LazyImage   from '@mooglee/core/components/LazyImage';
-import pageWrapper from '@mooglee/core/helpers/pageWrapper';
+import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 
 
 const styles = theme => ({
