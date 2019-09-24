@@ -1,3 +1,4 @@
+import { Container }     from '@material-ui/core';
 import MoogleePageLayout from '@mooglee/core/components/PageLayout';
 import wrapper           from '@mooglee/core/helpers/componentWrapper';
 import React             from 'react';
@@ -22,7 +23,9 @@ class PageLayout extends React.Component {
 
     return (
       <MoogleePageLayout Header={<Header/>} {...rest}>
-        {this.props.children}
+        <Container className={classes.container} fixed>
+          {this.props.children}
+        </Container>
       </MoogleePageLayout>
     );
   }
