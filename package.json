@@ -1,5 +1,5 @@
 {
-  "name": "@mooglee/mooglee-cli",
+  "name": "@mooglee/cli",
   "version": "0.0.0",
   "description": "",
   "main": "bin/run.js",
