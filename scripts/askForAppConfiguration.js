@@ -81,6 +81,7 @@ const questions = [
   },
   {
     type: (_, values) => values.apiFetchPagesData && 'text',
+    name: 'apiPagesDataEndpoint',
     message: 'What endpoint should be used for that ?',
     initial: (_, values) => values.enableTranslation ? '/{{lang}}/pages' : '/pages',
   },
