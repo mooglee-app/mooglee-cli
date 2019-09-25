@@ -8,10 +8,12 @@ module.exports = function ({ appPath, spinner }, next, data) {
     'name': data.appDetails.name.replace(/ /, '-'),
     'version': data.appDetails.version,
     'description': data.appDetails.description || 'A web application built with React and Next.js',
+    '_isMoogleeApp': true,
     'scripts': {
       'dev': 'NODE_ENV=development node index.js',
       'build': 'NODE_ENV=production next build',
-      'start': 'NODE_ENV=production node index.js',
+      'start': 'NODE_ENV=production node @mooglee/core/scripts/start.js',
+      'eject': 'NODE_ENV=production node @mooglee/core/scripts/eject.js',
       'heroku-postbuild': 'npm run build',
       'test': 'echo "Error: no test specified" && exit 1',
     },

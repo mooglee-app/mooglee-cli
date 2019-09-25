@@ -20,8 +20,8 @@ module.exports = {
   // Here you can define your api endpoints
 
   endpoints: {
-    pages: <<<API_PAGES_DATA_ENDPOINT>>>,
-    settings: <<<API_SETTINGS_DATA_ENDPOINT>>>,
+    pages: "<<<API_PAGES_DATA_ENDPOINT>>>",
+    settings: "<<<API_SETTINGS_DATA_ENDPOINT>>>",
   },
 
   // Define whether settings should be fetched from the API. If yes, a request will be made

@@ -2,10 +2,10 @@
   "name": "@mooglee/mooglee-cli",
   "version": "0.0.0",
   "description": "",
-  "main": "bin/index.js",
+  "main": "bin/run.js",
   "scripts": {
-    "start": "node bin/index.js",
-    "demo": "rm -Rf ./demo && npm run start ./demo"
+    "start": "node bin/run.js",
+    "demo": "rm -Rf ./demo && npm run start ./demo --yes"
   },
   "bin": {
     "creator": "./index.js"
