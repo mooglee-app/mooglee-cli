@@ -12,8 +12,8 @@ module.exports = function ({ appPath, spinner }, next, data) {
     'scripts': {
       'dev': 'NODE_ENV=development node index.js',
       'build': 'NODE_ENV=production next build',
-      'start': 'NODE_ENV=production node @mooglee/core/scripts/start.js',
-      'eject': 'NODE_ENV=production node @mooglee/core/scripts/eject.js',
+      'start': 'NODE_ENV=production node node_modules/@mooglee/core/scripts/start.js',
+      'eject': 'NODE_ENV=production node node_modules/@mooglee/core/scripts/eject.js',
       'heroku-postbuild': 'npm run build',
       'test': 'echo "Error: no test specified" && exit 1',
     },
