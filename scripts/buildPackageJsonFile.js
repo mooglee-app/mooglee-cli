@@ -10,7 +10,7 @@ module.exports = function ({ appPath, spinner }, next, data) {
     'description': data.appDetails.description || 'A web application built with React and Next.js',
     '_isMoogleeApp': true,
     'scripts': {
-      'dev': 'NODE_ENV=development node index.js',
+      'dev': 'NODE_ENV=development node node_modules/@mooglee/core/scripts/start.js',
       'build': 'NODE_ENV=production next build',
       'start': 'NODE_ENV=production node node_modules/@mooglee/core/scripts/start.js',
       'eject': 'NODE_ENV=production node node_modules/@mooglee/core/scripts/eject.js',
