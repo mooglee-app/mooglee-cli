@@ -24,7 +24,7 @@ module.exports = function ({ argv, spinner, config, appName }, next, data) {
     },
   ];
 
-  if (argv.includes('--yes')) {
+  if (argv.yes) {
     data.appDetails = {};
     questions.forEach(function (_question) {
       data.appDetails[_question.name] = _question.initial;

@@ -102,7 +102,7 @@ const questions = [
 ];
 
 module.exports = function ({ argv, spinner, config, appName }, next, data) {
-  if (argv.includes('--yes')) {
+  if (argv.yes) {
     data.appConfig = {};
     questions.forEach(function (_question) {
       data.appConfig[_question.name] = _question.initial;

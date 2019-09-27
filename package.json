@@ -1,10 +1,10 @@
 {
   "name": "@mooglee/cli",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "bin/run.js",
   "scripts": {
-    "start": "node bin/run.js",
+    "start": "node bin/index.js",
     "demo": "rm -Rf ./demo && npm run start ./demo --yes"
   },
   "bin": {
@@ -14,6 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.0.2",
     "figlet": "^1.2.1",
     "inquirer": "^6.2.2",
     "ncp": "^2.0.0",
