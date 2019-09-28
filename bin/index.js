@@ -5,7 +5,7 @@ const figlet      = require('figlet');
 const packageJson = require('../package');
 const path        = require('path');
 const ora         = require('ora');
-const parseArgv   = require('./lib/parseArgv');
+const parseArgv   = require('../lib/parseArgv');
 
 // Get command line arguments
 const argv = parseArgv();

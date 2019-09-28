@@ -1,16 +1,18 @@
 {
   "name": "@mooglee/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
-  "main": "bin/run.js",
+  "main": "bin/index.js",
   "scripts": {
     "start": "node bin/index.js",
-    "demo": "rm -Rf ./demo && npm run start ./demo --yes"
+    "demo": "rm -Rf ./demo && npm run start ./demo --yes",
+    "publish": "npm publish --scope=@mooglee --access public"
   },
   "bin": {
-    "creator": "./index.js"
+    "mooglee": "bin/index.js"
   },
-  "author": "chuck-durst",
+  "preferGlobal": true,
+  "author": "mooglee-app",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
