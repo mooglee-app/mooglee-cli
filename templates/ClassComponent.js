@@ -1,0 +1,31 @@
+import React   from 'react';
+import wrapper from '<<<WRAPPER_RELATIVE_PATH>>>';
+
+
+const styles = theme => ({});
+
+
+
+class <<<COMPONENT_NAME>>> extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+
+      </div>
+    );
+  }
+}
+
+
+
+export default wrapper(<<<COMPONENT_NAME>>>, {
+  styles,
+  <<<COMPONENT_OPTIONS>>>
+});

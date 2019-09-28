@@ -5,7 +5,7 @@
   "main": "bin/index.js",
   "scripts": {
     "start": "node bin/index.js",
-    "demo": "rm -Rf ./demo && npm run start ./demo --yes",
+    "demo": "rm -Rf ./demo && node bin/index.js create demo --yes",
     "publish": "npm publish --scope=@mooglee --access public"
   },
   "bin": {
