@@ -49,9 +49,10 @@ function resolvePageLayoutRelativePath(isEjected, folderPath) {
 /**
  * Format the namespaces list (add quotes)
  * @param namespaces
- * @returns {string}
+ * @returns {string|null}
  */
 function formatNamespaces(namespaces = []) {
+  if (!Array.isArray(namespaces)) return null;
   const _namespaces = namespaces
     .map(_n => `'${_n}'`)
     .join(', ');
