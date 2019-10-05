@@ -10,7 +10,7 @@ class <<<COMPONENT_NAME>>> extends React.Component {
     const { classes<<<PAGE_DATA_RENDER_DEFINITION>>> } = this.props;
 
     return (
-      <Layout<<PAGE_DATA_LAYOUT_DEFINITION>>>>
+      <Layout<<<PAGE_DATA_LAYOUT_DEFINITION>>>>
 
       </Layout>
     );

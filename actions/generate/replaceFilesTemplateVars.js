@@ -24,6 +24,7 @@ function resolveWrapperRelativePath(componentType, isEjected, folderPath) {
     return `@mooglee/core/wrappers/${type}`;
   } else {
     return folderPath.split('/')
+      .filter(_m => _m.length)
       .map(() => '..')
       .join('/') + `/wrappers/${type}`;
   }
@@ -41,6 +42,7 @@ function resolvePageLayoutRelativePath(isEjected, folderPath) {
     return `@mooglee/core/components/PageLayout`;
   } else {
     return folderPath.split('/')
+      .filter(_m => _m.length)
       .map(() => '..')
       .join('/') + `/components/PageLayout`;
   }
