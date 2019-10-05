@@ -1,23 +1,45 @@
 const fs   = require('fs');
 const path = require('path');
+const ncp  = require('ncp');
+
+const templates = {
+  page: {
+    class: path.resolve(__dirname, '../../templates/ClassPage.js.template'),
+    func: path.resolve(__dirname, '../../templates/FunctionalPage.js.template'),
+  },
+  component: {
+    class: path.resolve(__dirname, '../../templates/ClassComponent.js.template'),
+    func: path.resolve(__dirname, '../../templates/FunctionalComponent.js.template'),
+  },
+};
 
 module.exports = function ({ appPath, spinner }, next, data) {
-  try {
-    const routes = require(path.join(appPath, 'routes'));
-    const config = require(path.join(appPath, 'config'));
+  const {
+          type,
+          useClass,
+          folderPath,
+          name,
+        } = data;
 
-    data.appRoutes = routes;
+  // Resolve the file template path
+  const templatePath = (templates[type] || {})[useClass ? 'class' : 'func'];
 
-    if (config) {
-      data.appConfig = config;
-    } else {
-      data.appConfig = {
-        lang: {},
-      };
-      spinner.info('No configuration file has been found for your app.');
-    }
-  } catch (error) {
-    spinner.info('No configuration file has been found for your app.');
+  if (!templatePath) {
+    return next({ error: `No template have been found to generate your file.` });
   }
-    next();
+
+  const fileExtension = templatePath
+    .replace('.template', '')
+    .split('.')
+    .pop();
+
+  data.filePath = path.join(appPath, folderPath, `${name}.${fileExtension}`);
+
+  ncp(templatePath, data.filePath, function (error) {
+    if (error) {
+      return next({ error });
+    } else {
+      next();
+    }
+  });
 };

@@ -27,5 +27,7 @@ class <<<COMPONENT_NAME>>> extends React.Component {
 
 export default wrapper(<<<COMPONENT_NAME>>>, {
   styles,
-  <<<COMPONENT_OPTIONS>>>
+  isConnected: <<<IS_CONNECTED>>>,
+  isTranslatable: <<<IS_TRANSLATABLE>>>,
+  namespaces: <<<NAMESPACES>>>,
 });

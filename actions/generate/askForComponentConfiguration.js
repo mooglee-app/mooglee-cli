@@ -165,11 +165,11 @@ module.exports = function ({ argv, spinner, config, appPath }, next, data) {
         res[_question.name] = _question.initial;
       }
 
-      if (questionS.type === 'page') {
+      if (questions.type === 'page') {
         spinner.info('You should restart your app at the end of the script in order to see your new page')
       }
     });
-    data.appConfig = res;
+    Object.assign(data, res);
     next();
   });
 };

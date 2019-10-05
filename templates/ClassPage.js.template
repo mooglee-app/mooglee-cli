@@ -7,17 +7,21 @@ import pageWrapper from '<<<WRAPPER_RELATIVE_PATH>>>';
 
 const styles = theme => ({});
 
-function <<<PAGE_COMPONENT_NAME>>>({ pageData, classes }) {
-  return (
-    <Layout pageData={pageData}>
+class <<<PAGE_COMPONENT_NAME>>> extends React.Component {
+  render () {
+    const { classes<<<PAGE_DATA_RENDER_DEFINITION>>> } = this.props;
 
-    </Layout>
-  );
-};
+    return (
+      <Layout<<PAGE_DATA_LAYOUT_DEFINITION>>>>
+
+      </Layout>
+    );
+  };
+}
 
 
 export default pageWrapper(<<<PAGE_COMPONENT_NAME>>>, {
   name: '<<<PAGE_NAME>>>',
   styles,
-  <<<PAGE_OPTIONS>>>
+  noPageData: <<<NO_PAGE_DATA>>>,
 });

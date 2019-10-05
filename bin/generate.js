@@ -36,6 +36,10 @@ const actions = [
     desc: 'Generating your file',
     action: require('../actions/generate/generateFile'),
   },
+  {
+    desc: 'Configuring your file',
+    action: require('../actions/generate/replaceFilesTemplateVars'),
+  },
 ];
 
 module.exports = function (config) {
