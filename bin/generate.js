@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const runActions = require('../lib/runActions')
+const runActions = require('../lib/runActions');
 
 /**
  * Each action that will be executed one by one in the given order
@@ -21,33 +21,20 @@ const runActions = require('../lib/runActions')
  */
 const actions = [
   {
-    desc: 'Setting the app details',
-    action: require('../actions/create/askForAppDetails'),
+    desc: 'Checking if the current folder is a mooglee app',
+    action: require('../actions/generate/isMoogleeProject')
   },
   {
-    desc: 'Setting the app configuration',
-    action: require('../actions/create/askForAppConfiguration'),
+    desc: 'Resolving your app configuration files',
+    action: require('../actions/generate/resolveAppConfig')
   },
   {
-    desc: 'Creating the app directory',
-    action: require('../actions/create/mkdirSync'),
+    desc: 'Setting the component configuration',
+    action: require('../actions/generate/askForComponentConfiguration'),
   },
   {
-    desc: 'Generating the package.json file',
-    action: require('../actions/create/buildPackageJsonFile'),
-  },
-  {
-
-    desc: 'Copying source files',
-    action: require('../actions/create/copySourcesFiles'),
-  },
-  {
-    desc: 'Configuring your application',
-    action: require('../actions/create/replaceFilesTemplateVars'),
-  },
-  {
-    desc: 'Installing node modules',
-    action: require('../actions/create/installModules'),
+    desc: 'Generating your file',
+    action: require('../actions/generate/generateFile'),
   },
 ];
 

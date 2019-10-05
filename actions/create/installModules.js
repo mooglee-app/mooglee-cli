@@ -4,7 +4,6 @@ const shell = require('shelljs');
 module.exports = function ({ appPath, spinner }, next) {
   shell.cd(appPath);
   exec('npm install', function (code, stdout, stderr) {
-    console.log(code, stdout, stderr);
     spinner.indent = 1;
     if (stderr) {
       spinner.info(stderr);

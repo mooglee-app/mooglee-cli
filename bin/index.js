@@ -6,6 +6,11 @@ const packageJson = require('../package');
 const path        = require('path');
 const ora         = require('ora');
 const parseArgv   = require('../lib/parseArgv');
+const fs          = require('fs');
+
+process.on('unhandledRejection', err => {
+  throw err;
+});
 
 // Get command line arguments
 const argv = parseArgv();
@@ -24,26 +29,26 @@ console.log(
     ` v${packageJson.version}`,
   ),
 );
-console.log(
-  chalk.yellow(` Made with love by Chuck Durst`),
-);
-console.log();
 console.log();
 
 /**
  * This is the config object passed to each action
  */
 const config = {
-  appPath: path.resolve(argv.appPath),
+  appPath: argv.appPath ? path.resolve(argv.appPath) : fs.realpathSync(process.cwd()),
   get appName() {return this.appPath.split('/').pop();},
   argv,
-  spinner: ora('START').start(),
+  spinner: ora('Jetzt geht\'s los 🔥\n').start(),
 };
 
 const requiredScript = {
-  create: require('./create')
+  create: require('./create'),
+  generate: require('./generate'),
 }[argv.command];
 
 if (typeof requiredScript === 'function') {
   return requiredScript(config);
+} else {
+  console.log(`No script found for command "${argv.command}."`);
+  exit(1);
 }
