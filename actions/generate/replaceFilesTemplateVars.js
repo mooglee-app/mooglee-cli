@@ -4,10 +4,19 @@ const fs      = require('fs');
 function camelize(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
     return index == 0 ? word.toLowerCase() : word.toUpperCase();
-  }).replace(/\s+/g, '');
+  })
+    .replace(/\s+/g, '')
+    .replace(/-/, '');
 }
 
 
+/**
+ * Resolve the wrapper relative path
+ * @param componentType
+ * @param isEjected
+ * @param folderPath
+ * @returns {string}
+ */
 function resolveWrapperRelativePath(componentType, isEjected, folderPath) {
   const type = componentType === 'page' ? 'pageWrapper' : 'componentWrapper';
 
@@ -16,10 +25,16 @@ function resolveWrapperRelativePath(componentType, isEjected, folderPath) {
   } else {
     return folderPath.split('/')
       .map(() => '..')
-      .join('/') + `/wrappers/${type}`
+      .join('/') + `/wrappers/${type}`;
   }
 }
 
+/**
+ * Resolve the PageLayout.js relative path
+ * @param isEjected
+ * @param folderPath
+ * @returns {string}
+ */
 function resolvePageLayoutRelativePath(isEjected, folderPath) {
 
   if (!isEjected) {
@@ -27,15 +42,20 @@ function resolvePageLayoutRelativePath(isEjected, folderPath) {
   } else {
     return folderPath.split('/')
       .map(() => '..')
-      .join('/') + `/components/PageLayout`
+      .join('/') + `/components/PageLayout`;
   }
 }
 
-function formatNamespaces(namespaces = '') {
+/**
+ * Format the namespaces list (add quotes)
+ * @param namespaces
+ * @returns {string}
+ */
+function formatNamespaces(namespaces = []) {
   const _namespaces = namespaces
     .map(_n => `'${_n}'`)
-    .join(', ')
-  return`[${_namespaces}]`
+    .join(', ');
+  return `[${_namespaces}]`;
 }
 
 /**
@@ -54,19 +74,26 @@ function getReplacementConfig({
                                 isEjectedApp,
                                 folderPath,
                               }) {
-  const replaceStack = [
+  let replaceStack = [
     { from: /<<<COMPONENT_NAME>>>/g, to: camelize(name) },
-    { from: /<<<IS_CONNECTED>>>/g, to: !!isConnected },
-    { from: /<<<IS_TRANSLATABLE>>>/g, to: !!isTranslatable },
-    { from: /<<<NAMESPACES>>>/g, to: formatNamespaces(namespaces) || '[]' },
-    { from: /<<<PAGE_NAME>>>/g, to: name },
-    { from: /<<<NO_PAGE_DATA>>>/g, to: !usePageData },
-    { from: /<<<PAGE_DATA_RENDER_DEFINITION>>>/g, to: usePageData ? ', pageData' : '' },
-    { from: /<<<PAGE_DATA_LAYOUT_DEFINITION>>>/g, to: usePageData ? ' pageData={pageData}' : '' },
     { from: /<<<WRAPPER_RELATIVE_PATH>>>/g, to: resolveWrapperRelativePath(type, isEjectedApp, folderPath) },
-    { from: /<<<PAGE_LAYOUT_RELATIVE_PATH>>>/g, to: resolvePageLayoutRelativePath(isEjectedApp, folderPath) },
   ];
 
+  if (type === 'component') {
+    replaceStack = replaceStack.concat([
+      { from: /<<<IS_CONNECTED>>>/g, to: !!isConnected },
+      { from: /<<<IS_TRANSLATABLE>>>/g, to: !!isTranslatable },
+      { from: /<<<NAMESPACES>>>/g, to: formatNamespaces(namespaces) || '[]' },
+    ]);
+  } else {
+    replaceStack = replaceStack.concat([
+      { from: /<<<PAGE_NAME>>>/g, to: name },
+      { from: /<<<NO_PAGE_DATA>>>/g, to: !usePageData },
+      { from: /<<<PAGE_DATA_RENDER_DEFINITION>>>/g, to: usePageData ? ', pageData' : '' },
+      { from: /<<<PAGE_DATA_LAYOUT_DEFINITION>>>/g, to: usePageData ? ' pageData={pageData}' : '' },
+      { from: /<<<PAGE_LAYOUT_RELATIVE_PATH>>>/g, to: resolvePageLayoutRelativePath(isEjectedApp, folderPath) },
+    ]);
+  }
 
   return {
     from: replaceStack.map(_r => _r.from),
@@ -91,7 +118,7 @@ module.exports = function ({ appPath }, next, data) {
       ...getReplacementConfig(data),
     })
       .then(function (res) {
-       next();
+        next();
       })
       .catch(function (error) {
         next({ error });
