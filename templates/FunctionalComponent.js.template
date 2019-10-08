@@ -1,12 +1,12 @@
 import React   from 'react';
-import wrapper from '<<<WRAPPER_RELATIVE_PATH>>>';
+import wrapper from '[%WRAPPER_RELATIVE_PATH%]';
 
 
 const styles = theme => ({});
 
 
 
-export default function <<<COMPONENT_NAME>>> ({classes}) {
+export default function [%COMPONENT_NAME%] ({classes}) {
   return (
     <div className={classes.root}>
 
@@ -16,9 +16,9 @@ export default function <<<COMPONENT_NAME>>> ({classes}) {
 
 
 
-export default wrapper(<<<COMPONENT_NAME>>>, {
+export default wrapper([%COMPONENT_NAME%], {
   styles,
-  isConnected: <<<IS_CONNECTED>>>,
-  isTranslatable: <<<IS_TRANSLATABLE>>>,
-  namespaces: <<<NAMESPACES>>>,
+  isConnected: [%IS_CONNECTED%],
+  isTranslatable: [%IS_TRANSLATABLE%],
+  namespaces: [%NAMESPACES%],
 });

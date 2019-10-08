@@ -20,21 +20,21 @@ module.exports = {
   // Here you can define your api endpoints
 
   endpoints: {
-    pages: "<<<API_PAGES_DATA_ENDPOINT>>>",
-    settings: "<<<API_SETTINGS_DATA_ENDPOINT>>>",
+    pages: "[%API_PAGES_DATA_ENDPOINT%]",
+    settings: "[%API_SETTINGS_DATA_ENDPOINT%]",
   },
 
   // Define whether settings should be fetched from the API. If yes, a request will be made
   // using the 'settings' endpoint defined above. The result will
   // be stored in the redux store under state.app.settings. These settings are not cached and
   // will be requested on each server-side page load
-  fetchAppSettings: <<<API_FETCH_PAGES_DATA>>>,
+  fetchAppSettings: [%API_FETCH_PAGES_DATA%],
 
   // Like for the fetchAppSettings parameter, it is also possible to make a request to the API to fetch data for
   // all the pages. The result will be accessible under the pages 'pageData' prop and stored in the redux
   // store under state.pages.<page_name>. Note that you can disable this feature for a single page by setting
   // 'withPageData' to false on the pageWrapper composer.
-  fetchPagesData: <<<API_FETCH_SETTINGS_DATA>>>,
+  fetchPagesData: [%API_FETCH_SETTINGS_DATA%],
 
   // This method is used to generate an API URL for a given pathname
   get getUrl() {

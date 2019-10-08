@@ -8,32 +8,31 @@ const fs = require('fs')
  * @param appDetails
  */
 function getReplacementConfig({ appConfig, appDetails }) {
-  console.log(appConfig);
   const replaceStack = [
-    { from: /<<<APP_NAME>>>/g, to: appConfig.name },
-    { from: /<<<APP_DESCRIPTION>>>/g, to: appConfig.description },
-    { from: /<<<PORT>>>/g, to: appConfig.port },
-    { from: /<<<USE_API>>>/g, to: appConfig.enableFakeAPI },
-    { from: /<<<ENABLE_FAKE_API>>>/g, to: appConfig.enableFakeAPI },
-    { from: /<<<ENABLE_SERVICE_WORKER>>>/g, to: appConfig.enableServiceWorker },
-    { from: /<<<ENABLE_TRANSLATION>>>/g, to: appConfig.enableTranslation },
-    { from: /<<<API_HOSTNAME>>>/g, to: appConfig.apiHostname },
-    { from: /<<<API_PORT>>>/g, to: appConfig.apiPort },
-    { from: /<<<API_PROTOCOL>>>/g, to: appConfig.apiUseSSL ? 'https' : 'http' },
-    { from: /<<<API_PATHNAME>>>/g, to: appConfig.apiPathname },
-    { from: /<<<API_FETCH_PAGES_DATA>>>/g, to: appConfig.useAPI && appConfig.apiFetchPagesData },
-    { from: /<<<API_PAGES_DATA_ENDPOINT>>>/g, to: appConfig.apiPagesDataEndpoint },
-    { from: /<<<API_FETCH_SETTINGS_DATA>>>/g, to: appConfig.useAPI && appConfig.apiFetchSettingsData },
-    { from: /<<<API_SETTINGS_DATA_ENDPOINT>>>/g, to: appConfig.apiSettingsDataEndpoint },
-    { from: /<<<PAGE_DATA_RENDER_DEFINITION>>>/g, to: appConfig.useAPI ? ', pageData' : '' },
-    { from: /<<<PAGE_DATA_LAYOUT_DEFINITION>>>/g, to: appConfig.useAPI ? ' pageData={pageData}' : '' },
+    { from: /\[%APP_NAME%\]/g, to: appConfig.name },
+    { from: /\[%APP_DESCRIPTION%\]/g, to: appConfig.description },
+    { from: /\[%PORT%\]/g, to: appConfig.port },
+    { from: /\[%USE_API%\]/g, to: appConfig.enableFakeAPI },
+    { from: /\[%ENABLE_FAKE_API%\]/g, to: appConfig.enableFakeAPI },
+    { from: /\[%ENABLE_SERVICE_WORKER%\]/g, to: appConfig.enableServiceWorker },
+    { from: /\[%ENABLE_TRANSLATION%\]/g, to: appConfig.enableTranslation },
+    { from: /\[%API_HOSTNAME%\]/g, to: appConfig.apiHostname },
+    { from: /\[%API_PORT%\]/g, to: appConfig.apiPort },
+    { from: /\[%API_PROTOCOL%\]/g, to: appConfig.apiUseSSL ? 'https' : 'http' },
+    { from: /\[%API_PATHNAME%\]/g, to: appConfig.apiPathname },
+    { from: /\[%API_FETCH_PAGES_DATA%\]/g, to: appConfig.useAPI && appConfig.apiFetchPagesData },
+    { from: /\[%API_PAGES_DATA_ENDPOINT%\]/g, to: appConfig.apiPagesDataEndpoint },
+    { from: /\[%API_FETCH_SETTINGS_DATA%\]/g, to: appConfig.useAPI && appConfig.apiFetchSettingsData },
+    { from: /\[%API_SETTINGS_DATA_ENDPOINT%\]/g, to: appConfig.apiSettingsDataEndpoint },
+    { from: /\[%PAGE_DATA_RENDER_DEFINITION%\]/g, to: appConfig.useAPI ? ', pageData' : '' },
+    { from: /\[%PAGE_DATA_LAYOUT_DEFINITION%\]/g, to: appConfig.useAPI ? ' pageData={pageData}' : '' },
   ];
 
   if (!appConfig.enableTranslation) {
-    replaceStack.push ({from: /<<<!ENABLE_TRANSLATION.*ENABLE_TRANSLATION!>>>/gs, to: ''})
+    replaceStack.push ({from: /\[%!ENABLE_TRANSLATION.*ENABLE_TRANSLATION!%\]/gs, to: ''})
   } else {
-    replaceStack.push ({from: /<<<!ENABLE_TRANSLATION/g, to: ''})
-    replaceStack.push ({from: /ENABLE_TRANSLATION!>>>/g, to: ''})
+    replaceStack.push ({from: /\[%!ENABLE_TRANSLATION/g, to: ''})
+    replaceStack.push ({from: /ENABLE_TRANSLATION!%\]/g, to: ''})
   }
 
   return {

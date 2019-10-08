@@ -78,23 +78,23 @@ function getReplacementConfig({
                                 folderPath,
                               }) {
   let replaceStack = [
-    { from: /<<<COMPONENT_NAME>>>/g, to: camelize(name) },
-    { from: /<<<WRAPPER_RELATIVE_PATH>>>/g, to: resolveWrapperRelativePath(type, isEjectedApp, folderPath) },
+    { from: /\[%COMPONENT_NAME%\]/g, to: camelize(name) },
+    { from: /\[%WRAPPER_RELATIVE_PATH%\]/g, to: resolveWrapperRelativePath(type, isEjectedApp, folderPath) },
   ];
 
   if (type === 'component') {
     replaceStack = replaceStack.concat([
-      { from: /<<<IS_CONNECTED>>>/g, to: !!isConnected },
-      { from: /<<<IS_TRANSLATABLE>>>/g, to: !!isTranslatable },
-      { from: /<<<NAMESPACES>>>/g, to: formatNamespaces(namespaces) || '[]' },
+      { from: /\[%IS_CONNECTED%\]/g, to: !!isConnected },
+      { from: /\[%IS_TRANSLATABLE%\]/g, to: !!isTranslatable },
+      { from: /\[%NAMESPACES%\]/g, to: formatNamespaces(namespaces) || '[]' },
     ]);
   } else {
     replaceStack = replaceStack.concat([
-      { from: /<<<PAGE_NAME>>>/g, to: name },
-      { from: /<<<NO_PAGE_DATA>>>/g, to: !usePageData },
-      { from: /<<<PAGE_DATA_RENDER_DEFINITION>>>/g, to: usePageData ? ', pageData' : '' },
-      { from: /<<<PAGE_DATA_LAYOUT_DEFINITION>>>/g, to: usePageData ? ' pageData={pageData}' : '' },
-      { from: /<<<PAGE_LAYOUT_RELATIVE_PATH>>>/g, to: resolvePageLayoutRelativePath(isEjectedApp, folderPath) },
+      { from: /\[%PAGE_NAME%\]/g, to: name },
+      { from: /\[%NO_PAGE_DATA%\]/g, to: !usePageData },
+      { from: /\[%PAGE_DATA_RENDER_DEFINITION%\]/g, to: usePageData ? ', pageData' : '' },
+      { from: /\[%PAGE_DATA_LAYOUT_DEFINITION%\]/g, to: usePageData ? ' pageData={pageData}' : '' },
+      { from: /\[%PAGE_LAYOUT_RELATIVE_PATH%\]/g, to: resolvePageLayoutRelativePath(isEjectedApp, folderPath) },
     ]);
   }
 

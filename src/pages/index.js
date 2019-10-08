@@ -8,13 +8,13 @@ import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 
 const styles = theme => ({
   title: {
-    marginBottom: theme.spacing(4),
+    marginTop: theme.spacing(8),
   },
 });
 
-function Home ({ classes<<<PAGE_DATA_RENDER_DEFINITION>>> }) {
+function Home ({ classes[%PAGE_DATA_RENDER_DEFINITION%] }) {
   return (
-    <Layout<<<PAGE_DATA_LAYOUT_DEFINITION>>>>
+    <Layout[%PAGE_DATA_LAYOUT_DEFINITION%]>
       <Grid container justify="center">
         <Grid item md={6}>
           <Typography variant="h1" className={classes.title} align="center">Welcome to your mooglee app ! :)</Typography>

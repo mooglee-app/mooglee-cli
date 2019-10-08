@@ -1,11 +1,11 @@
 import React       from 'react';
-import Layout      from '<<<PAGE_LAYOUT_RELATIVE_PATH>>>';
-import pageWrapper from '<<<WRAPPER_RELATIVE_PATH>>>';
+import Layout      from '[%PAGE_LAYOUT_RELATIVE_PATH%]';
+import pageWrapper from '[%WRAPPER_RELATIVE_PATH%]';
 
 
 const styles = theme => ({});
 
-function <<<COMPONENT_NAME>>>({ classes<<<PAGE_DATA_RENDER_DEFINITION>>> }) {
+function [%COMPONENT_NAME%]({ classes[%PAGE_DATA_RENDER_DEFINITION%] }) {
   return (
     <Layout pageData={pageData}>
 
@@ -14,8 +14,8 @@ function <<<COMPONENT_NAME>>>({ classes<<<PAGE_DATA_RENDER_DEFINITION>>> }) {
 };
 
 
-export default pageWrapper(<<<COMPONENT_NAME>>>, {
-  name: '<<<PAGE_NAME>>>',
+export default pageWrapper([%COMPONENT_NAME%], {
+  name: '[%PAGE_NAME%]',
   styles,
-  noPageData: <<<NO_PAGE_DATA>>>,
+  noPageData: [%NO_PAGE_DATA%],
 });

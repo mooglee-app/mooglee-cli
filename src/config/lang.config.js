@@ -6,9 +6,9 @@ module.exports = {
 
   // Enable all the translation services.
   // If you disable it, it means no routes translation, no locales files, and so on...
-  enabled: <<<ENABLE_TRANSLATION>>>,
+  enabled: [%ENABLE_TRANSLATION%],
 
-  <<<!ENABLE_TRANSLATION
+  [%!ENABLE_TRANSLATION
 
   // The default language also used as a fallback
   default: 'en',
@@ -60,5 +60,5 @@ module.exports = {
   // The life of the cookie in minutes
   cookieMinutes: 120,
 
-  ENABLE_TRANSLATION!>>>
+  ENABLE_TRANSLATION!%]
 };

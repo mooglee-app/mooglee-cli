@@ -1,16 +1,16 @@
 import React       from 'react';
-import Layout      from '<<<PAGE_LAYOUT_RELATIVE_PATH>>>';
-import pageWrapper from '<<<WRAPPER_RELATIVE_PATH>>>';
+import Layout      from '[%PAGE_LAYOUT_RELATIVE_PATH%]';
+import pageWrapper from '[%WRAPPER_RELATIVE_PATH%]';
 
 
 const styles = theme => ({});
 
-class <<<COMPONENT_NAME>>> extends React.Component {
+class [%COMPONENT_NAME%] extends React.Component {
   render () {
-    const { classes<<<PAGE_DATA_RENDER_DEFINITION>>> } = this.props;
+    const { classes[%PAGE_DATA_RENDER_DEFINITION%] } = this.props;
 
     return (
-      <Layout<<<PAGE_DATA_LAYOUT_DEFINITION>>>>
+      <Layout[%PAGE_DATA_LAYOUT_DEFINITION%]>
 
       </Layout>
     );
@@ -18,8 +18,8 @@ class <<<COMPONENT_NAME>>> extends React.Component {
 }
 
 
-export default pageWrapper(<<<COMPONENT_NAME>>>, {
-  name: '<<<PAGE_NAME>>>',
+export default pageWrapper([%COMPONENT_NAME%], {
+  name: '[%PAGE_NAME%]',
   styles,
-  noPageData: <<<NO_PAGE_DATA>>>,
+  noPageData: [%NO_PAGE_DATA%],
 });
