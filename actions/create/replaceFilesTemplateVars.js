@@ -8,6 +8,7 @@ const fs = require('fs')
  * @param appDetails
  */
 function getReplacementConfig({ appConfig, appDetails }) {
+  console.log(appConfig);
   const replaceStack = [
     { from: /<<<APP_NAME>>>/g, to: appConfig.name },
     { from: /<<<APP_DESCRIPTION>>>/g, to: appConfig.description },
@@ -20,10 +21,12 @@ function getReplacementConfig({ appConfig, appDetails }) {
     { from: /<<<API_PORT>>>/g, to: appConfig.apiPort },
     { from: /<<<API_PROTOCOL>>>/g, to: appConfig.apiUseSSL ? 'https' : 'http' },
     { from: /<<<API_PATHNAME>>>/g, to: appConfig.apiPathname },
-    { from: /<<<API_FETCH_PAGES_DATA>>>/g, to: appConfig.apiFetchPagesData },
+    { from: /<<<API_FETCH_PAGES_DATA>>>/g, to: appConfig.useAPI && appConfig.apiFetchPagesData },
     { from: /<<<API_PAGES_DATA_ENDPOINT>>>/g, to: appConfig.apiPagesDataEndpoint },
-    { from: /<<<API_FETCH_SETTINGS_DATA>>>/g, to: appConfig.apiFetchSettingsData },
+    { from: /<<<API_FETCH_SETTINGS_DATA>>>/g, to: appConfig.useAPI && appConfig.apiFetchSettingsData },
     { from: /<<<API_SETTINGS_DATA_ENDPOINT>>>/g, to: appConfig.apiSettingsDataEndpoint },
+    { from: /<<<PAGE_DATA_RENDER_DEFINITION>>>/g, to: appConfig.useAPI ? ', pageData' : '' },
+    { from: /<<<PAGE_DATA_LAYOUT_DEFINITION>>>/g, to: appConfig.useAPI ? ' pageData={pageData}' : '' },
   ];
 
   if (!appConfig.enableTranslation) {

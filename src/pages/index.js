@@ -12,18 +12,17 @@ const styles = theme => ({
   },
 });
 
-const Home = React.memo(function ({ pageData, classes }) {
+function Home ({ classes<<<PAGE_DATA_RENDER_DEFINITION>>> }) {
   return (
-    <Layout pageData={pageData}>
-      <Typography variant="h1" className={classes.title} align="center">react-next-starter</Typography>
+    <Layout<<<PAGE_DATA_LAYOUT_DEFINITION>>>>
       <Grid container justify="center">
         <Grid item md={6}>
-          <LazyImage src="https://miro.medium.com/max/1200/1*8g-FaXXbEUFP11oZD1kfaA.jpeg"/>
+          <Typography variant="h1" className={classes.title} align="center">Welcome to your mooglee app ! :)</Typography>
         </Grid>
       </Grid>
     </Layout>
   );
-});
+}
 
 
 export default pageWrapper(Home, {
