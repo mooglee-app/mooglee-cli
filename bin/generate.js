@@ -22,23 +22,23 @@ const runActions = require('../lib/runActions');
 const actions = [
   {
     desc: 'Checking if the current folder is a mooglee app',
-    action: require('../actions/generate/isMoogleeProject')
+    action: require('../lib/actions/generate/isMoogleeProject')
   },
   {
     desc: 'Resolving your app configuration files',
-    action: require('../actions/generate/resolveAppConfig')
+    action: require('../lib/actions/generate/resolveAppConfig')
   },
   {
     desc: 'Setting the component configuration',
-    action: require('../actions/generate/askForComponentConfiguration'),
+    action: require('../lib/actions/generate/askForComponentConfiguration'),
   },
   {
     desc: 'Generating your file',
-    action: require('../actions/generate/generateFile'),
+    action: require('../lib/actions/generate/generateFile'),
   },
   {
     desc: 'Configuring your file',
-    action: require('../actions/generate/replaceFilesTemplateVars'),
+    action: require('../lib/actions/generate/replaceFilesTemplateVars'),
   },
 ];
 

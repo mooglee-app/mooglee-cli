@@ -22,32 +22,32 @@ const runActions = require('../lib/runActions')
 const actions = [
   {
     desc: 'Setting the app details',
-    action: require('../actions/create/askForAppDetails'),
+    action: require('../lib/actions/create/askForAppDetails'),
   },
   {
     desc: 'Setting the app configuration',
-    action: require('../actions/create/askForAppConfiguration'),
+    action: require('../lib/actions/create/askForAppConfiguration'),
   },
   {
     desc: 'Creating the app directory',
-    action: require('../actions/create/mkdirSync'),
+    action: require('../lib/actions/create/mkdirSync'),
   },
   {
     desc: 'Generating the package.json file',
-    action: require('../actions/create/buildPackageJsonFile'),
+    action: require('../lib/actions/create/buildPackageJsonFile'),
   },
   {
 
     desc: 'Copying source files',
-    action: require('../actions/create/copySourcesFiles'),
+    action: require('../lib/actions/create/copySourcesFiles'),
   },
   {
     desc: 'Configuring your application',
-    action: require('../actions/create/replaceFilesTemplateVars'),
+    action: require('../lib/actions/create/replaceFilesTemplateVars'),
   },
   {
     desc: 'Installing node modules',
-    action: require('../actions/create/installModules'),
+    action: require('../lib/actions/create/installModules'),
   },
 ];
 
