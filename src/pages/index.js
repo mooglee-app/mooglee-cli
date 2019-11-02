@@ -2,7 +2,6 @@ import Grid        from '@material-ui/core/Grid';
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
 import Layout      from '../components/common/PageLayout';
-import LazyImage   from '@mooglee/core/components/LazyImage';
 import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 
 
@@ -25,7 +24,7 @@ function Home ({ classes[%PAGE_DATA_RENDER_DEFINITION%] }) {
 }
 
 
-export default pageWrapper(Home, {
+export default React.memo(pageWrapper(Home, {
   name: 'home',
   styles,
-});
+}));

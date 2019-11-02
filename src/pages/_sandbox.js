@@ -10,7 +10,7 @@ import Layout      from '../components/common/PageLayout';
 import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 
 
-const Sandbox = React.memo(function ({ theme, pageData, reduxStore }) {
+function Sandbox ({ theme, pageData, reduxStore }) {
   return (
     <Layout pageData={pageData}>
       <Grid container direction="column" spacing={10}>
@@ -189,13 +189,13 @@ const Sandbox = React.memo(function ({ theme, pageData, reduxStore }) {
       </Grid>
     </Layout>
   );
-});
+};
 
 
 const mapStateToProps = state => ({ reduxStore: state });
 
-export default pageWrapper(Sandbox, {
+export default React.memo(pageWrapper(Sandbox, {
   name: '_sandbox',
   withTheme: true,
   mapStateToProps,
-});
+}));
