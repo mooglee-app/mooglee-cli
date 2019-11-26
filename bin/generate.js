@@ -42,7 +42,7 @@ const actions = [
   },
   {
     desc: 'Add to git',
-    action: require('../lib/actions/generate/replaceFilesTemplateVars'),
+    action: require('../lib/actions/generate/addToGit'),
   },
 ];
 
