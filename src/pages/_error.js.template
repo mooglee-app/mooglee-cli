@@ -1,9 +1,11 @@
-import React      from 'react';
-import PageLayout from '@mooglee/core/components/PageLayout'
+import Layout      from '@mooglee/core/components/PageLayout';
+import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
+import React       from 'react';
+
 
 function Error({ statusCode, message }) {
   return (
-    <PageLayout pageData={{ title: 'Error'}}>
+    <Layout pageData={{ title: 'Error' }}>
       <p>
         {
           statusCode
@@ -15,7 +17,7 @@ function Error({ statusCode, message }) {
           <p>{message}</p>
         }
       </p>
-    </PageLayout>
+    </Layout>
   );
 }
 
@@ -24,4 +26,6 @@ Error.getInitialProps = function ({ res, err }) {
   return { statusCode };
 };
 
-export default Error;
+export default pageWrapper(Error, {
+  name: 'error',
+});
