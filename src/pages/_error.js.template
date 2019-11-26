@@ -1,4 +1,4 @@
-import Layout      from '@mooglee/core/components/PageLayout';
+import Layout      from '../components/common/PageLayout.js';
 import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 import React       from 'react';
 
