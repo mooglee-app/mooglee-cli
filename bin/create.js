@@ -21,6 +21,10 @@ const runActions = require('../lib/runActions')
  */
 const actions = [
   {
+    desc: 'Checking if an update is available',
+    action: require('../lib/actions/checkForUpdates'),
+  },
+  {
     desc: 'Setting the app details',
     action: require('../lib/actions/create/askForAppDetails'),
   },

@@ -21,6 +21,10 @@ const runActions = require('../lib/runActions');
  */
 const actions = [
   {
+    desc: 'Checking if an update is available',
+    action: require('../lib/actions/checkForUpdates'),
+  },
+  {
     desc: 'Checking if the current folder is a mooglee app',
     action: require('../lib/actions/generate/isMoogleeProject')
   },
