@@ -40,6 +40,10 @@ const actions = [
     desc: 'Configuring your file',
     action: require('../lib/actions/generate/replaceFilesTemplateVars'),
   },
+  {
+    desc: 'Add to git',
+    action: require('../lib/actions/generate/replaceFilesTemplateVars'),
+  },
 ];
 
 module.exports = function (config) {
