@@ -19,11 +19,6 @@ module.exports = {
   // !! Please keep the default language at the end of this array. At least one item is required.
   available: [
     {
-      lang: 'fr',
-      locale: 'fr_FR',
-      name: 'Français',
-    },
-    {
       lang: 'en',
       locale: 'en_EN',
       name: 'English',
