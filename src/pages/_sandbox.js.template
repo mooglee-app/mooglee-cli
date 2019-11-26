@@ -194,8 +194,8 @@ function Sandbox ({ theme, pageData, reduxStore }) {
 
 const mapStateToProps = state => ({ reduxStore: state });
 
-export default React.memo(pageWrapper(Sandbox, {
+export default pageWrapper(Sandbox, {
   name: '_sandbox',
   withTheme: true,
   mapStateToProps,
-}));
+});

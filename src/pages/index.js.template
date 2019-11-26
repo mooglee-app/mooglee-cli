@@ -24,7 +24,7 @@ function Home ({ classes[%PAGE_DATA_RENDER_DEFINITION%] }) {
 }
 
 
-export default React.memo(pageWrapper(Home, {
+export default pageWrapper(Home, {
   name: 'home',
   styles,
-}));
+});
