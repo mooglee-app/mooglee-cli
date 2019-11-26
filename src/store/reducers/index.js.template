@@ -1,9 +1,5 @@
-import { combineReducers } from 'redux';
-import app                 from './app.reducers';
-import pages               from './pages.reducers';
+import demo from './demo.reducers';
 
-
-export default combineReducers({
-  pages,
-  app,
-});
+export default {
+  demo,
+};

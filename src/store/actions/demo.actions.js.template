@@ -1,0 +1,7 @@
+export const DEMO_DO_SOMETHING = 'DEMO_DO_SOMETHING';
+export function doSomething(something) {
+  return {
+    type: DEMO_DO_SOMETHING,
+    something,
+  };
+}
