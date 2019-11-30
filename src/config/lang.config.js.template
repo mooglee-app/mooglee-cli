@@ -34,11 +34,10 @@ module.exports = {
   localesPath: 'locales',
   localesFormat: '{{lng}}/{{ns}}',
 
-  // Defines if the language subpaths should be showed in the url
-  // all: yes for all the locales, including the default one
-  // foreign: yes for all the locales, except the default one
   // @see https://github.com/isaachinman/next-i18next#5-locale-subpaths
-  localeSubpaths: 'all',
+  localeSubpaths: {
+    en: 'en'
+  },
 
   // Enabling debug for i18next
   debug: false,
