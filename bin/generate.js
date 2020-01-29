@@ -26,7 +26,7 @@ const actions = [
   },
   {
     desc: 'Checking if the current folder is a mooglee app',
-    action: require('../lib/actions/generate/isMoogleeProject')
+    action: require('../lib/actions/isMoogleeProject')
   },
   {
     desc: 'Resolving your app configuration files',

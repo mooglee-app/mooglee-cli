@@ -44,6 +44,7 @@ const config = {
 const requiredScript = {
   create: require('./create'),
   generate: require('./generate'),
+  run: require('./run')
 }[argv.command];
 
 if (typeof requiredScript === 'function') {

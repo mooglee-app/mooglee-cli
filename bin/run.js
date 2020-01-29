@@ -21,37 +21,12 @@ const runActions = require('../lib/runActions')
  */
 const actions = [
   {
-    desc: 'Checking if an update is available',
-    action: require('../lib/actions/checkForUpdates'),
+    desc: 'Checking your project',
+    action: require('../lib/actions/isMoogleeProject'),
   },
   {
-    desc: 'Setting the app details',
-    action: require('../lib/actions/create/askForAppDetails'),
-  },
-  {
-    desc: 'Setting the app configuration',
-    action: require('../lib/actions/create/askForAppConfiguration'),
-  },
-  {
-    desc: 'Creating the app directory',
-    action: require('../lib/actions/create/mkdirSync'),
-  },
-  {
-    desc: 'Generating the package.json file',
-    action: require('../lib/actions/create/buildPackageJsonFile'),
-  },
-  {
-    desc: 'Copying source files',
-    action: require('../lib/actions/create/copySourcesFiles'),
-  },
-  {
-    desc: 'Configuring your application',
-    action: require('../lib/actions/create/replaceFilesTemplateVars'),
-  },
-  {
-    desc: 'Installing, hold tight',
-    action: require('../lib/actions/create/installModules'),
-  },
+    action: require('../lib/actions/run/runPackageScript'),
+  }
 ];
 
 module.exports = function (config) {

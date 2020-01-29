@@ -20,6 +20,7 @@
     "command-line-usage": "^6.0.2",
     "cross-spawn": "^7.0.1",
     "figlet": "^1.2.1",
+    "has-yarn": "^2.1.0",
     "inquirer": "^6.2.2",
     "ncp": "^2.0.0",
     "ora": "^3.4.0",
