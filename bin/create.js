@@ -50,7 +50,7 @@ const actions = [
     action: require('../lib/actions/create/replaceFilesTemplateVars'),
   },
   {
-    desc: 'Installing node modules',
+    desc: 'Installing, hold tight',
     action: require('../lib/actions/create/installModules'),
   },
 ];
