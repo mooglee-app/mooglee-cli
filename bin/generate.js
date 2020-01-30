@@ -45,6 +45,9 @@ const actions = [
     action: require('../lib/actions/generate/replaceFilesTemplateVars'),
   },
   {
+    action: require('../lib/actions/generate/addPageToRoutes'),
+  },
+  {
     desc: 'Add to git',
     action: require('../lib/actions/generate/addToGit'),
   },
