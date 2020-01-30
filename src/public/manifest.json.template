@@ -1,6 +1,6 @@
 {
-  "name": "react-next-starter",
-  "short_name": "react-next-starter",
+  "name": "[%APP_NAME%]",
+  "short_name": "[%APP_NAME%]",
   "theme_color": "#FF4040",
   "background_color": "#1D1C2A",
   "display": "fullscreen",
