@@ -1,6 +1,6 @@
 {
   "name": "@mooglee/cli",
-  "version": "0.1.15",
+  "version": "0.1.19",
   "description": "",
   "main": "bin/index.js",
   "scripts": {
@@ -11,6 +11,11 @@
   "bin": {
     "mooglee": "bin/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mooglee-app/mooglee-cli"
+  },
+  "homepage": "https://github.com/mooglee-app/mooglee-cli",
   "preferGlobal": true,
   "author": "mooglee-app",
   "license": "MIT",
