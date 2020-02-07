@@ -30,8 +30,7 @@ module.exports = {
    * @see https://www.i18next.com/overview/configuration-options
    **/
 
-  // Defines where and how the locales files are stored
-  localesPath: 'locales',
+  // Define the locales folder structure
   localesFormat: '{{lng}}/{{ns}}',
 
   // @see https://github.com/isaachinman/next-i18next#5-locale-subpaths
