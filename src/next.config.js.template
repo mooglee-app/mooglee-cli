@@ -1,7 +1,1 @@
-/**
- * This config file is only used for production
- */
-
-const nextConfig  = require('@mooglee/core/next.config');
-
-module.exports = withOffline(nextConfig);
+module.exports = require('@mooglee/core/next.config');
