@@ -15,7 +15,6 @@ module.exports = {
   get pathname() { return process.env.API_PATHNAME;},
   get port() { return process.env.API_PORT;},
   get protocol() { return process.env.API_PROTOCOL;},
-  get enableFakeAPI() { return envBoolean(process.env.ENABLE_FAKE_API);},
 
   // Here you can define your api endpoints
 
