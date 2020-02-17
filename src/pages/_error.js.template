@@ -1,22 +1,26 @@
-import Layout      from '../components/common/PageLayout.js';
 import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 import React       from 'react';
+import Layout      from '../components/common/PageLayout.js';
 
 
 function Error({ statusCode, message }) {
   return (
     <Layout pageData={{ title: 'Error' }}>
-      <p>
+      <h3>
         {
           statusCode
             ? `An error ${statusCode} occurred on server`
             : 'An error occurred on client'
         }
-        {
-          !!message &&
-          <p>{message}</p>
-        }
-      </p>
+      </h3>
+      {
+        !!message &&
+        <p>{message}</p>
+      }
+      {
+        process.env.NODE_ENV === 'development' &&
+        <p>Tip: You may want to customize this page for a better user experience</p>
+      }
     </Layout>
   );
 }
