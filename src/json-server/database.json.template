@@ -1,0 +1,24 @@
+{
+  [%!API_FETCH_SETTINGS_DATA"settings": {
+      "lang": "en",
+      "appName": "[%APP_NAME%]"
+    },API_FETCH_SETTINGS_DATA!%][%!API_FETCH_PAGES_DATA
+  "pages": [
+    {
+      "pageId": "home",
+      "title": "[%APP_NAME%]",
+      "lang": "en",
+      "metaData": [
+        {
+          "name": "description",
+          "content": "[%APP_DESCRIPTION%]"
+        }
+      ]
+    },
+    {
+      "pageId": "sandbox",
+      "title": "__SAnNdboOxxX__",
+      "lang": "en"
+    }
+  ]API_FETCH_PAGES_DATA!%]
+}

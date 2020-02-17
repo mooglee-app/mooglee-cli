@@ -49,6 +49,10 @@ const actions = [
     action: require('../lib/actions/create/replaceFilesTemplateVars'),
   },
   {
+    _desc: 'Build the json-server routes files depending on the app config',
+    action: require('../lib/actions/create/buildJsonServerRoutes'),
+  },
+  {
     desc: 'Installing, hold tight',
     action: require('../lib/actions/create/installModules'),
   },

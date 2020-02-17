@@ -1,0 +1,19 @@
+const spawn                = require('child_process').exec;
+const getClientEnvironment = require('@mooglee/core/server/env');
+
+
+getClientEnvironment();
+
+const command = spawn(`./node_modules/.bin/json-server --watch ./json-server/database.json --routes ./json-server/api-routes.json --port ${process.env.API_PORT}`);
+
+command.stdout.on('data', function (data) {
+  console.log(data.toString().replace(/\n/, ''));
+});
+
+command.stderr.on('data', function (data) {
+  console.error(data.toString());
+});
+
+command.on('exit', function (code) {
+  console.info('child process exited with code ' + code.toString());
+});
