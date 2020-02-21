@@ -3,7 +3,13 @@
  */
 module.exports = {
 
-  // items that should be stored in the local storage (ex: 'user.profile', etc)
+  // items that should be stored in the local storage (ex: 'user', 'user.profile', etc)
   // pageData fetched from the API are always stored locally but never cached
   localStorageStates: [],
+
+  // You can define custom middleware for redux here
+  customMiddleware: [],
+
+  // Add a console logger on development
+  logger: true
 };
