@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node bin/index.js",
     "demo": "rm -Rf ./demo && node bin/index.js create demo",
-    "publish": "npm publish --scope=@mooglee --access public"
+    "publish": "npm publish --scope=@mooglee --access public",
+    "test": "NODE_ENV=test mocha __test__/ --delay --recursive --no-warnings --exit --reporter mocha-reporter --timeout 100000"
   },
   "bin": {
     "mooglee": "bin/index.js"
@@ -32,8 +33,16 @@
     "ora": "^3.4.0",
     "prompts": "^2.3.0",
     "replace-in-file": "^4.3.1",
+    "request": "^2.88.2",
     "rimraf": "^3.0.1",
     "shelljs": "^0.8.3",
     "update-check": "^1.5.3"
+  },
+  "devDependencies": {
+    "find-in-files": "^0.5.0",
+    "mocha": "^7.1.0",
+    "mocha-reporter": "^0.1.1",
+    "request-promise": "^4.2.5",
+    "search-in-file": "^1.2.2"
   }
 }

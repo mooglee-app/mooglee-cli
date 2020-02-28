@@ -23,10 +23,10 @@ if (argv.version) {
 
 console.log(
   chalk.yellow(
-    figlet.textSync('Mooglee', {
+    figlet.textSync(process.env.NODE_ENV === 'test' ? 'Mooglee tests' : 'Mooglee', {
       font: 'Standard',
     }),
-    ` v${packageJson.version}`,
+    process.env.NODE_ENV === 'test' ? 'Your app is installing' : ` v${packageJson.version}`,
   ),
 );
 console.log();
@@ -44,7 +44,7 @@ const config = {
 const requiredScript = {
   create: require('./create'),
   generate: require('./generate'),
-  run: require('./run')
+  run: require('./run'),
 }[argv.command];
 
 if (typeof requiredScript === 'function') {
