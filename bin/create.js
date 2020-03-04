@@ -25,10 +25,6 @@ const actions = [
     action: require('../lib/actions/checkForUpdates'),
   },
   {
-    desc: 'Setting the app details',
-    action: require('../lib/actions/create/askForAppDetails'),
-  },
-  {
     desc: 'Setting the app configuration',
     action: require('../lib/actions/create/askForAppConfiguration'),
   },
