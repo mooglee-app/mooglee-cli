@@ -7,8 +7,8 @@
     "start": "node bin/index.js",
     "demo": "rm -Rf ./demo && node bin/index.js create demo",
     "publish": "npm publish --scope=@mooglee --access public",
-    "test": "NODE_ENV=test mocha __test__/ --delay  --no-warnings --exit --reporter mocha-reporter --timeout 100000",
-    "test:nobuild": "NODE_ENV=test mocha __test__/  --no-warnings --exit --reporter mocha-reporter --timeout 100000"
+    "test": "NODE_ENV=test mocha __test__/ --delay --no-warnings --exit --reporter mocha-reporter --timeout 100000",
+    "test:nobuild": "NODE_ENV=test mocha __test__/ --no-warnings --exit --reporter mocha-reporter --timeout 100000"
   },
   "bin": {
     "mooglee": "bin/index.js"
@@ -43,7 +43,7 @@
     "find-in-files": "^0.5.0",
     "mocha": "^7.1.0",
     "mocha-reporter": "^0.1.1",
-    "request-promise": "^4.2.5",
+    "node-fetch": "^2.6.0",
     "search-in-file": "^1.2.2"
   }
 }
