@@ -67,4 +67,5 @@ typings/
 TODO.md
 /demo
 /my-app
-/mooglee-test-app
+/mooglee-app
+/__test__/mooglee-test-app

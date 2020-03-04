@@ -21,14 +21,20 @@ if (argv.version) {
   process.exit(0);
 }
 
-console.log(
-  chalk.yellow(
-    figlet.textSync(process.env.NODE_ENV === 'test' ? 'Mooglee tests' : 'Mooglee', {
-      font: 'Standard',
-    }),
-    process.env.NODE_ENV === 'test' ? 'Your app is installing' : ` v${packageJson.version}`,
-  ),
-);
+if (process.env.NODE_ENV === 'test') {
+  console.log('Mooglee tests');
+  console.log('Your app is installing...');
+} else {
+  console.log(
+    chalk.yellow(
+      figlet.textSync('Mooglee', {
+        font: 'Standard',
+      }),
+      ` v${packageJson.version}`,
+    ),
+  );
+}
+
 console.log();
 
 /**
