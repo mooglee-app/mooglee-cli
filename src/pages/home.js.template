@@ -11,9 +11,9 @@ const styles = theme => ({
   },
 });
 
-function Home ({ classes[%PAGE_DATA_RENDER_DEFINITION%] }) {
+function Home ({ classes }) {
   return (
-    <Layout[%PAGE_DATA_LAYOUT_DEFINITION%]>
+    <Layout>
       <Grid container justify="center">
         <Grid item md={6}>
           <Typography variant="h1" className={classes.title} align="center">Welcome to your mooglee app ! :)</Typography>

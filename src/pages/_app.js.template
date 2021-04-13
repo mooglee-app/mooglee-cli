@@ -1,4 +1,4 @@
-import '../styles/styles.scss';
+import '../styles/styles.css';
 import React from 'react';
 import _app from '@mooglee/core/pages/_app'
 

@@ -3,16 +3,16 @@ import Paper       from '@material-ui/core/Paper';
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
 import Inspector   from 'react-inspector';
-import NoSSR       from 'react-no-ssr';
+import NoSSR       from '@material-ui/core/NoSsr';
 import config      from '@mooglee/core/config';
 import routes      from '../routes';
 import Layout      from '../components/common/PageLayout';
 import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 
 
-function Sandbox ({ theme, pageData, reduxStore }) {
+function Sandbox ({ theme, reduxStore }) {
   return (
-    <Layout pageData={pageData}>
+    <Layout>
       <Grid container direction="column" spacing={10}>
 
         {/** THEME **/}

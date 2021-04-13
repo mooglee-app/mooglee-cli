@@ -5,7 +5,7 @@ function doSomething(state, action) {
   return { ...state, something: action.something };
 }
 
-export default (state = {}, action) => {
+const demoReducers = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.DEMO_DO_SOMETHING:
       return doSomething(state, action);
@@ -14,3 +14,5 @@ export default (state = {}, action) => {
       return state;
   }
 };
+
+export default demoReducers;

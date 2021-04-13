@@ -11,7 +11,6 @@ try {
 // Build the final config object
 const masteredConfig = Object.assign({
     server: require('./server.config'),
-    api: require('./api.config'),
     lang: require('./lang.config'),
     seo: require('./seo.config'),
     env: require('./env.config'),

@@ -5,9 +5,9 @@ import pageWrapper from '[%WRAPPER_RELATIVE_PATH%]';
 
 const styles = theme => ({});
 
-function [%COMPONENT_NAME%]({ classes[%PAGE_DATA_RENDER_DEFINITION%] }) {
+function [%COMPONENT_NAME%]() {
   return (
-    <Layout pageData={pageData}>
+    <Layout>
 
     </Layout>
   );
@@ -17,5 +17,4 @@ function [%COMPONENT_NAME%]({ classes[%PAGE_DATA_RENDER_DEFINITION%] }) {
 export default pageWrapper([%COMPONENT_NAME%], {
   name: '[%PAGE_NAME%]',
   styles,
-  noPageData: [%NO_PAGE_DATA%],
 });

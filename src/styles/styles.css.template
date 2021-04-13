@@ -1,3 +1,56 @@
+a {
+  text-decoration: none;
+}
+
+a:active {
+  color: currentColor;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 960px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+.async-image-ready {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sk-screen-progress {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.react-loading-skeleton {
+  /* animation: progress 1.2s ease-in-out infinite; */
+  background-color: #eee;
+  background-image: linear-gradient(90deg, #eee, #f5f5f5, #eee);
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  border-radius: 1px;
+  display: inline-block;
+  line-height: 1;
+  width: 100%;
+}
+
 
 /*------------------------------------*\
 		nprogress

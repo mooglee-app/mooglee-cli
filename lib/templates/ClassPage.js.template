@@ -7,10 +7,8 @@ const styles = theme => ({});
 
 class [%COMPONENT_NAME%] extends React.Component {
   render () {
-    const { classes[%PAGE_DATA_RENDER_DEFINITION%] } = this.props;
-
     return (
-      <Layout[%PAGE_DATA_LAYOUT_DEFINITION%]>
+      <Layout>
 
       </Layout>
     );
@@ -21,5 +19,4 @@ class [%COMPONENT_NAME%] extends React.Component {
 export default pageWrapper([%COMPONENT_NAME%], {
   name: '[%PAGE_NAME%]',
   styles,
-  noPageData: [%NO_PAGE_DATA%],
 });
