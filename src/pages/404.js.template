@@ -5,22 +5,14 @@ import Layout      from '../components/common/PageLayout.js';
 import pageWrapper from '../wrappers/pageWrapper';
 
 
-function Error({ statusCode, message }) {
+function NotFound() {
   return (
-    <Layout pageData={{ title: 'Error' }}>
+    <Layout pageData={{ title: 'Not found' }}>
       <Grid container alignItems="center" justify="center" direction="column" style={{ height: '100vh' }}>
         <Typography variant="h3" paragraph align="center">
-          {
-            statusCode
-              ? `An error ${statusCode} occurred on server`
-              : 'An error occurred on client'
-          }
+          Not found
         </Typography>
         <Typography align="center">
-          {
-            !!message &&
-            <span>{message}</span>
-          }
           {
             process.env.NODE_ENV === 'development' &&
             <span>Tip: You may want to customize this page for a better user experience</span>
@@ -31,11 +23,7 @@ function Error({ statusCode, message }) {
   );
 }
 
-Error.getInitialProps = function ({ res, err }) {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-  return { statusCode };
-};
 
-export default pageWrapper(Error, {
-  name: 'error',
+export default pageWrapper(NotFound, {
+  name: 'not-found',
 });
