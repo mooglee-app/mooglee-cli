@@ -1,8 +1,7 @@
 import Grid        from '@material-ui/core/Grid';
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
-import Layout      from '../components/common/PageLayout.js';
-import pageWrapper from '../wrappers/pageWrapper';
+import Layout      from '../components/common/PageLayout';
 
 
 function NotFound() {
@@ -24,6 +23,4 @@ function NotFound() {
 }
 
 
-export default pageWrapper(NotFound, {
-  name: 'not-found',
-});
+export default NotFound;

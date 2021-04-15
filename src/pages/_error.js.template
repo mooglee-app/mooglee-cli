@@ -2,7 +2,7 @@ import Grid        from '@material-ui/core/Grid';
 import Typography  from '@material-ui/core/Typography';
 import React       from 'react';
 import Layout      from '../components/common/PageLayout.js';
-import pageWrapper from '../wrappers/pageWrapper';
+import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
 
 
 function Error({ statusCode, message }) {
