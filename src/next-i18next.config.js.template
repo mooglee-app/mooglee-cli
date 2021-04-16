@@ -1,16 +1,15 @@
-const path                  = require('path');
-const { initReactI18next }  = require('react-i18next');
+const path = require('path');
 
 
 /**
- * All the languages and i18n settings belong here. Most of the following parameters
- * are used by i18next
+ * All the languages and i18n settings belong here. The following parameters
+ * are used by next, next-i18next and i18next
+ *
+ * Note: You can remove this file safely if you do not wish to use any i18n feature.
+ * Ensure that 'enabled' is set to false in config/lang.config.js before removing it
+ * or the app may throw an error.
  */
 module.exports = {
-  // Enable all the translation services.
-  // If you disable it, it means no routes translation, no locales files, and so on...
-  enabled: true,
-
   i18n: {
     // The default language also used as a fallback
     defaultLocale: 'en',
@@ -28,10 +27,8 @@ module.exports = {
   localesStructure: '{{lng}}/{{ns}}',
   // Enabling debug for i18next
   debug: false,
-  // Lang namespaces
-  namespaces: ['common'],
   // Default language namespace used on the whole app
-  defaultNamespace: 'common',
+  defaultNS: 'common',
   serializeConfig: false,
   react: {
     useSuspense: false,

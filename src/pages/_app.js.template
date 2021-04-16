@@ -1,5 +1,5 @@
 import '../styles/styles.css';
 import React from 'react';
-import _app from '@mooglee/core/pages/_app'
+import _app  from '@mooglee/core/pages/_app'
 
 export default  _app;

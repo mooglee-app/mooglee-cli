@@ -1,22 +1,30 @@
-import Grid        from '@material-ui/core/Grid';
-import Typography  from '@material-ui/core/Typography';
-import React       from 'react';
-import Layout      from '../components/common/PageLayout';
-import pageWrapper from '@mooglee/core/wrappers/pageWrapper';
+import Grid                                   from '@material-ui/core/Grid';
+import Typography                             from '@material-ui/core/Typography';[%!TRANSLATION_ENABLED
+import { getI18nStaticProps, useTranslation } from '@mooglee/core/tools/i18n';TRANSLATION_ENABLED!%]
+import pageWrapper                            from '@mooglee/core/wrappers/pageWrapper';
+import React                                  from 'react';
+import Layout                                 from '../components/common/PageLayout';
 
-
+[%!TRANSLATION_ENABLED
+export const getStaticProps = getI18nStaticProps();
+TRANSLATION_ENABLED!%]
 const styles = theme => ({
-  title: {
-    marginTop: theme.spacing(8),
+  container: {
+    height: '100vh',
   },
 });
 
-function Home ({ classes }) {
+
+function Home({ classes }) {[%!TRANSLATION_ENABLED
+  const { t } = useTranslation();TRANSLATION_ENABLED!%]
+
   return (
     <Layout>
-      <Grid container justify="center">
+      <Grid container justify="center" alignItems="center" className={classes.container}>
         <Grid item md={6}>
-          <Typography variant="h1" className={classes.title} align="center">Welcome to your mooglee app ! :)</Typography>
+          <Typography variant="h1" align="center">
+            [%!TRANSLATION_ENABLED{t('HOME_PAGE.WELCOME_MESSAGE')}TRANSLATION_ENABLED!%][%!TRANSLATION_DISABLEDWelcome on your mooglee app ! :)TRANSLATION_DISABLED!%]
+          </Typography>
         </Grid>
       </Grid>
     </Layout>
@@ -25,6 +33,5 @@ function Home ({ classes }) {
 
 
 export default pageWrapper(Home, {
-  name: 'home',
   styles,
 });

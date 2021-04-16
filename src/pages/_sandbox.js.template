@@ -195,7 +195,6 @@ function Sandbox ({ theme, reduxStore }) {
 const mapStateToProps = state => ({ reduxStore: state });
 
 export default pageWrapper(Sandbox, {
-  name: '_sandbox',
   withTheme: true,
   mapStateToProps,
 });
