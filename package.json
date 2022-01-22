@@ -43,7 +43,7 @@
     "find-in-files": "^0.5.0",
     "mocha": "^8.0.1",
     "mocha-reporter": "^0.1.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "search-in-file": "^1.2.2"
   }
 }
